@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Home Menu -->
+    <div id="homeMenu" class="screen active">
+        <div class="menu-container">
+            <h1>♟ Chess Game ♟</h1>
+            <p class="subtitle">Choose your opponent</p>
+            <button class="menu-btn" onclick="startFriendGame()">Play with Friend</button>
+            <button class="menu-btn" onclick="showDifficultyMenu()">Play Against Bot</button>
+        </div>
+    </div>
+
+    <!-- Difficulty Selection Menu -->
+    <div id="difficultyMenu" class="screen">
+        <div class="menu-container">
+            <h1>♟ Select Difficulty ♟</h1>
+            <p class="subtitle">Choose bot level</p>
+            <button class="menu-btn difficulty-btn" onclick="startBotGame('easy')">Easy</button>
+            <button class="menu-btn difficulty-btn" onclick="startBotGame('medium')">Medium</button>
+            <button class="menu-btn difficulty-btn" onclick="startBotGame('hard')">Hard</button>
+            <button class="menu-btn back-btn" onclick="backToHome()">Back</button>
+        </div>
+    </div>
+
+    <!-- Game Board -->
+    <div id="gameScreen" class="screen">
+        <div class="game-container">
+            <div class="game-info">
+                <div class="turn-indicator">
+                    <span id="currentPlayer">White's Turn</span>
+                </div>
+                <div class="player-labels">
+                    <span id="topPlayer" class="player-label">Black</span>
+                    <span id="bottomPlayer" class="player-label">White</span>
+                </div>
+            </div>
+
+            <div id="chessboard" class="chessboard"></div>
+
+            <div class="game-controls">
+                <button class="control-btn" onclick="resetGame()">Reset Game</button>
+                <button class="control-btn" onclick="backToHome()">Main Menu</button>
+            </div>
+
+            <div id="gameStatus" class="game-status"></div>
+        </div>
+    </div>
+
+    <script src="chess.js"></script>
+</body>
+</html>
